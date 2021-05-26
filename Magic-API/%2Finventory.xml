@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/inventory" path="/inventory" id="2e7d4e49-77ef-4c57-b2ec-406b95523952" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2e7d4e49-77ef-4c57-b2ec-406b95523952fileName">%2Finventory</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="searchInventory" id="27ef0d54-c154-48fd-8200-1d7513d1e075" method="GET">
+    <con:description>By passing in the appropriate options, you can search for
+available inventory in the system</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>itemNumber</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>search results matching criteria</con:description>
+      <con:sampleContent>[ {
+  "id" : "d290f1ee-6c54-4b01-90e6-d701748f0851",
+  "name" : "Widget Adapter",
+  "releaseDate" : "2016-08-29T09:12:33.001Z",
+  "manufacturer" : {
+    "name" : "ACME Corporation",
+    "homePage" : "https://www.acme-corp.com",
+    "phone" : "408-867-5309"
+  }
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="a28d331a-e0a4-49a1-a5b4-471f6c2ef8d6" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com/Corey_Projects/Magic/2.0.0</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>itemNumber</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="addInventory" id="d9594f18-d832-4dff-8811-4088968115ed" method="POST">
+    <con:description>Adds an item to the system</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : "d290f1ee-6c54-4b01-90e6-d701748f0851",
+  "name" : "Widget Adapter",
+  "releaseDate" : "2016-08-29T09:12:33.001Z",
+  "manufacturer" : {
+    "name" : "ACME Corporation",
+    "homePage" : "https://www.acme-corp.com",
+    "phone" : "408-867-5309"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="02fe0710-7b7d-4116-bcd8-c212c36da63a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com/Corey_Projects/Magic/2.0.0</con:endpoint>
+      <con:request>{\r
+  "id" : "d290f1ee-6c54-4b01-90e6-d701748f0851",\r
+  "name" : "Widget Adapter",\r
+  "releaseDate" : "2016-08-29T09:12:33.001Z",\r
+  "manufacturer" : {\r
+    "name" : "ACME Corporation",\r
+    "homePage" : "https://www.acme-corp.com",\r
+    "phone" : "408-867-5309"\r
+  }\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Deletes an item from the system" id="a4294b5e-b881-4892-ae79-c39c895f2bf0" method="DELETE">
+    <con:description>deletes an item</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>api_key</con:name>
+        <con:style>HEADER</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="3cf470de-1005-44f8-ac3c-61ba0f769f71" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com/Corey_Projects/Magic/2.0.0</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

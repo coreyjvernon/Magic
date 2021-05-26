@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="2676390a-1cdb-4a59-b5a4-96a3818eb55d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2676390a-1cdb-4a59-b5a4-96a3818eb55dfileName">Test-Case-1</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="Data Source" id="73fe1ae0-34bc-4c79-9f2a-fcb81c17b874">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>1</generatorsTotalNumber>
+          <lastSelectedProperty>-1</lastSelectedProperty>
+          <GeneratorType0>INT</GeneratorType0>
+          <PropertyName0>itemNumber</PropertyName0>
+          <repetitionCountitemNumber>0</repetitionCountitemNumber>
+          <repeatValuesitemNumber>false</repeatValuesitemNumber>
+          <IntegerDataGeneratorMinValueitemNumber>1</IntegerDataGeneratorMinValueitemNumber>
+          <IntegerDataGeneratorMaxValueitemNumber>100</IntegerDataGeneratorMaxValueitemNumber>
+          <IntegerDataGeneratorStepValueitemNumber>1</IntegerDataGeneratorStepValueitemNumber>
+          <IntegerDataGeneratorConsequentValuesitemNumber>false</IntegerDataGeneratorConsequentValuesitemNumber>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>itemNumber</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="05ca9198-a8b6-43dc-b3f0-f5550ce99ff4">
+    <con:settings/>
+    <con:config service="Magic API" resourcePath="/inventory" methodName="searchInventory" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="a28d331a-e0a4-49a1-a5b4-471f6c2ef8d6" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://virtserver.swaggerhub.com/Corey_Projects/Magic/2.0.0</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://virtserver.swaggerhub.com/Corey_Projects/Magic/2.0.0/inventory</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="cd076999-e1e6-4491-a560-0ed0a9a6ccd7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="itemNumber" value="${Data Source#itemNumber}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>itemNumber</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="de6d8f58-4a76-4ae1-a8cc-83e53b8d6e42">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>REST Request</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>73fe1ae0-34bc-4c79-9f2a-fcb81c17b874</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="96be9504-72e9-4534-b747-ef98efa7bb12" name="Magic" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="96be9504-72e9-4534-b747-ef98efa7bb12fileName">Magic</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

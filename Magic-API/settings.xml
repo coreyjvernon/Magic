@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="5025e3de-6342-4a5d-8f22-4add5a49a12e" name="Magic API" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://api.swaggerhub.com/apis/Corey_Projects/Magic/2.0.0" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:description>This is a magic API</con:description>
+  <con:settings>
+    <con:setting id="5025e3de-6342-4a5d-8f22-4add5a49a12efileName">Magic-API</con:setting>
+  </con:settings>
+  <con:definitionCache/>
+  <con:endpoints>
+    <con:endpoint>https://virtserver.swaggerhub.com/Corey_Projects/Magic/2.0.0</con:endpoint>
+  </con:endpoints>
+</con:interface>
